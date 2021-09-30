@@ -1,0 +1,49 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: ./demo-app-be
+      dockerfile: Dockerfile
+    image: myapp-server
+    container_name: myapp-node-server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    env_file: ./demo-app-be/.env
+    networks:
+      - app-network
+      
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+
+  client:
+    build:
+      context: ./demo-app-fe
+      dockerfile: Dockerfile
+    image: myapp-client
+    container_name: myapp-react-client
+    command: yarn start
+    depends_on:
+      - server
+    ports:
+      - "80:3000"
+    networks:
+      - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    data-volume:
+    node_modules:
+    web-root:
+      driver: local
