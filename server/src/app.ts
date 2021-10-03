@@ -24,9 +24,6 @@ app.use(
   })
 );
 app.use(cors());
-app.use(function(req, res) {
-    res.sendFile(path.join(__dirname, '../client','build','index.html'));
-});
 
 app.use(createBookRouter);
 app.use(deleteBookRouter);

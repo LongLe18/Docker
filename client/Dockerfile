@@ -5,10 +5,12 @@ WORKDIR /app
 COPY package.json /app
 # Install app dependencies
 RUN npm install
-
-RUN npm run build
 # Copy your code in the docker image
 COPY . /app
+
+RUN npm run build
+
+
 
 
 # Expose the port 3000

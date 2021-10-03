@@ -1,6 +1,8 @@
 FROM node:12-alpine
 
-WORKDIR /app
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 # Install Dependencies
 COPY package*.json ./
