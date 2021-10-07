@@ -1,3 +1,3 @@
 export const ServerConfigs = {
-  server: '',
+  server: 'http://lb.com',
 };
