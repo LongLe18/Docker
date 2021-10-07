@@ -24,6 +24,7 @@ services:
       - "27017:27017"
     networks:
       - app-network
+
   client:
     build:
       context: ./client
@@ -33,10 +34,22 @@ services:
     depends_on:
       - server
     ports:
-      - "80:3000"
+      - "3000:3000"
     networks:
       - app-network
 
+  client2:
+    build:
+      context: ./client2
+      dockerfile: Dockerfile
+    image: myapp-client-2
+    container_name: myapp-react-client-2
+    depends_on:
+      - server
+    ports:
+      - "3001:3000"
+    networks:
+      - app-network
 networks:
     app-network:
         driver: bridge

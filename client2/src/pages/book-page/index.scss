@@ -1,0 +1,100 @@
+.BookPage {
+  padding: 20px;
+
+  .ListActions {
+    display: flex;
+    flex-direction: row;
+
+    .Button {
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Button:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .Icon {
+    margin-right: 5px;
+  }
+
+  .AddButton {
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+    float: right;
+    display: flex;
+    align-items: center;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+.ModalBook {
+  display: flex;
+  flex-direction: column;
+
+  .RowInfo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+
+    .RowTitle {
+      margin-bottom: 3px;
+      color: black;
+      font-size: 14px;
+      // font-weight: 500;
+      width: 150px;
+    }
+
+    .RowContent {
+      flex: 1;
+      background-color: #f2f2f2;
+      color: black;
+      padding: 5px;
+      border: none;
+      border-radius: 2px;
+    }
+
+    .RowContent:focus {
+      outline: none;
+    }
+
+    .RowContentSelect {
+      flex: 1;
+    }
+
+    .RowAreaContent {
+      flex: 1;
+      background-color: #f2f2f2;
+      color: black;
+      padding: 5px;
+      border: none;
+      border-radius: 2px;
+    }
+
+    .RowAreaContent:focus {
+      outline: none;
+    }
+  }
+}
