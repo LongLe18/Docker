@@ -1,4 +1,5 @@
 <h1><strong>Tutorial config nginx</strong></h1>
+
 1. install git
 	sudo apt update
 	sudo apt install git
