@@ -50,6 +50,22 @@ services:
       - "3001:3000"
     networks:
       - app-network
+   
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: nginx-app
+    container_name: nginx-app
+    ports: 
+      - "80:80"
+    depends_on:
+      - server
+      - client
+      - client2
+    networks:    
+      - app-network
+      
 networks:
     app-network:
         driver: bridge
